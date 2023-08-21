@@ -18,21 +18,16 @@ root.render(
 reportWebVitals();
 
 const client = new ApolloClient({
-  uri: 'https://flyby-router-demo.herokuapp.com/',
+  uri: 'https://localhost:5001/graphql',
   cache: new InMemoryCache(),
 });
-
-// const client = ...
 
 client
   .query({
     query: gql`
-      query GetLocations {
-        locations {
-          id
+      query {
+        aliens {
           name
-          description
-          photo
         }
       }
     `,
