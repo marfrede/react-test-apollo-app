@@ -27,9 +27,11 @@ client
     query: gql`
       query {
         aliens {
-          name
+          name,
+          planet
         }
       }
     `,
+    errorPolicy: 'all'
   })
   .then((result) => console.log(result));
